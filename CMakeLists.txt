@@ -5,7 +5,6 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake)
 
 find_package(Kodi REQUIRED)
 find_package(FFTW REQUIRED)
-find_package(FFTW3f REQUIRED)
 find_package(MPG123 REQUIRED)
 find_package(RapidJSON 1.1.0 REQUIRED)
 find_package(SQLite3 REQUIRED)
@@ -38,7 +37,7 @@ include_directories(${KODI_INCLUDE_DIR}/.. # Hack way with "/..", need bigger Ko
                     ${LIBUSB_1_INCLUDE_DIRS}
                     ${FDK_AAC_INCLUDE_DIRS})
 
-list(APPEND DEPLIBS ${FFTW_DOUBLE_LIB}
+list(APPEND DEPLIBS ${FFTW_LONGDOUBLE_LIB}
                     ${MPG123_LIBRARIES}
                     ${SQLITE3_LIBRARY}
                     ${RTLSDR_LIBRARIES}
@@ -47,7 +46,7 @@ list(APPEND DEPLIBS ${FFTW_DOUBLE_LIB}
 #             ${RTLSDR_LIBRARIES}
 #             ${FFTW_LIBRARIES})
 
-# message(FATAL_ERROR "-->${FFTW_DOUBLE_LIB}")
+# message(FATAL_ERROR "-->${RTLSDR_LIBRARIES}")
 
 set(PVRRTLRADIO_SOURCES src/addon.cpp
                         src/dabdsp/fft.cpp
