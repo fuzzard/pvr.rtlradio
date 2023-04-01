@@ -19,6 +19,24 @@ endif()
 
 include_directories(libusb)
 
+set(prefix ${CMAKE_INSTALL_PREFIX})
+set(exec_prefix "$")
+set(exec_prefix "${exec_prefix}{")
+set(exec_prefix "${exec_prefix}prefix")
+set(exec_prefix "${exec_prefix}}")
+
+set(libdir "$")
+set(libdir "${libdir}{")
+set(libdir "${libdir}exec_prefix")
+set(libdir "${libdir}}/lib")
+
+set(includedir "$")
+set(includedir "${includedir}{")
+set(includedir "${includedir}prefix")
+set(includedir "${includedir}}/include")
+
+configure_file(libusb-1.0.pc.in ${PROJECT_SOURCE_DIR}/libusb-1.0.pc)
+
 set(SOURCES libusb/libusbi.h
             libusb/version.h
             libusb/version_nano.h
