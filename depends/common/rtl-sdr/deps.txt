@@ -1,2 +1,1 @@
 libusb
-pthread-win32
