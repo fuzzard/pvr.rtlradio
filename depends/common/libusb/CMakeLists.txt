@@ -53,5 +53,5 @@ add_library(libusb-1.0 ${SOURCES})
 
 install(TARGETS libusb-1.0 DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
 install(FILES libusb/libusb.h DESTINATION ${CMAKE_INSTALL_PREFIX}/include/libusb-1.0)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libusb-1.0.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
+install(FILES ${PROJECT_SOURCE_DIR}/libusb-1.0.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
 
