@@ -6,9 +6,9 @@ endif()
 find_path(LIBUSB_1_INCLUDE_DIRS libusb.h
                               PATHS ${PC_LIBUSB_1_INCLUDEDIR}
                               PATH_SUFFIXES libusb-1.0)
-find_library(LIBUSB_1_LIBRARIES libusb-1.0
+find_library(LIBUSB_1_LIBRARIES libusb-1.0.a
                               PATHS ${PC_LIBUSB_1_LIBDIR})
-
+list(APPEND LIBUSB_1_LIBRARIES ${PC_LIBUSB_1_LDFLAGS})
 include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(libusb-1.0 REQUIRED_VARS LIBUSB_1_LIBRARIES LIBUSB_1_INCLUDE_DIRS)
 
